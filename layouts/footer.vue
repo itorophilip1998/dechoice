@@ -3,7 +3,7 @@
    <!-- ======= Footer ======= -->
   <footer id="footer">
      <ul class="ul pl-1  text-center w-100 m-0 border-top bg-white ">
-       <li  v-for="(list,index) in list1" :key="index" @click="$router.push(list.url)"
+       <li  v-for="(list,index) in list1" :key="index" @click="$router.push(list.url) "
        :class="`${list.url==$route.path ? 'li-hover':''}`">
          <i :class="`i  text-${list.url==$route.path ? 'primary i-hover':'muted'} ${list.icon} `"></i>
          </li>
@@ -29,13 +29,7 @@ export default {
            icon:'fa fa-dashboard',
 
          },
-         {
-           name:'Contact us',
-           url:'/contact',
-           icon:'fa fa-phone',
-
-
-         } ,
+        
            {
            name:'Logout',
            url:'/login',
@@ -45,6 +39,8 @@ export default {
       ]
     }
   },
+   
+
 }
 </script>
 <style >
