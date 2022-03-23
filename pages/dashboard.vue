@@ -33,7 +33,7 @@
             <h6 class="card-title m-0">{{ data.name }}</h6>
 
             <h5 class="card-text d-block">
-              ₦{{ data.price }}
+              ₦{{ formatCurrency(data.price) }}
               <i
                 v-if="data.price"
                 class="fa fa-check-circle text-primary"
@@ -55,7 +55,7 @@
      <div class="dashboard-header ">
       <!-- Applied -->
       <h6 class="font-weight-bold pl-1">
-        Electronics/Clothe
+        Electronics/Clothes
         <i class="fa fa-tag text-danger" aria-hidden="true"></i>
       </h6>
 
@@ -70,7 +70,7 @@
             <h6 class="card-title m-0">{{ data.name }}</h6>
 
             <h5 class="card-text d-block">
-              ₦{{ data.price }}
+              ₦{{ formatCurrency(data.price) }}
               <i
                 v-if="data.price"
                 class="fa fa-check-circle text-primary"
@@ -133,6 +133,11 @@ export default {
     this.getAll()
   },
   methods: {
+    formatCurrency(price){
+    let dollarUSLocale = Intl.NumberFormat('en-US');
+  let newCash=dollarUSLocale.format(price)
+        return newCash;
+    },
     getAll() {
       const token = localStorage.getItem('token')
       const user_id = localStorage.getItem('user_id')

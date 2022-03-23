@@ -6,8 +6,7 @@
              <i class="fa fa-arrow-left text-white" aria-hidden="true"></i>
     </span>
        <nuxt-link to="/document" class=" btn btn-outline-light shadow btn-sm  l-0" v-if="info.dashboard"> <i class="fa fa-cart-plus" aria-hidden="true"></i></nuxt-link>
-
-
+ 
      <h5 class="text-white text-center">{{info.short_name}}
        </h5>
 <div class="p-2 text-center" v-if="info.dashboard">
