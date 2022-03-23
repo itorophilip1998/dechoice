@@ -38,9 +38,9 @@
     display: inline-block;
     width: 1.5rem;
     height: 1.5rem;
-    border: 4px solid var(--success);
+    border: 4px solid var(--orange);
     border-radius: 50%;
-    border-top-color: var(--success);
+    border-top-color: var(--orange);
     animation: spin 1s ease-in-out infinite;
   }
   @keyframes spin {

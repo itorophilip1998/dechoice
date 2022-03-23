@@ -18,7 +18,7 @@ export default {}
     bottom:0;
     left:0;
     right:0;
-    background-color:var(--green) !important;
+    background-color:var(--orange) !important;
     z-index: 10000 !important;
     display: flex;
     align-items: center;

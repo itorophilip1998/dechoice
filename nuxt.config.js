@@ -3,7 +3,6 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-headadd .
   router: {
-      
     middleware: 'auth',
     scrollBehavior: async function (to, from, savedPosition) {
       if (savedPosition) {
@@ -36,14 +35,14 @@ export default {
     },
   },
   head: {
-    title: 'Siwes Recomadation System',
+    title: 'De Choice Mall',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.jpg' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -81,22 +80,22 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     meta: {
-      title: 'Siwes Recommendation System',
-      author: 'Siwes Recommendation System',
+      title: 'De-choice',
+      author: 'De choice Mall',
     },
     icon: {
-      fileName: 'logo.jpg',
+      fileName: 'logo.png',
     },
     manifest: {
-      name: 'Siwes Recommendation System',
-      short_name: 'Siwes-RS',
+      name: 'Dechoice Mall',
+      short_name: 'De`Choice',
       lang: 'en',
       display: 'standalone',
       start_url: '/',
       useWebmanifestExtension: false,
-      description: 'Siwes Recommendation System',
-      background_color: '#28a745',
-      theme_color: '#28a745',
+      description: 'De`Choice',
+      background_color: 'white',
+      theme_color: 'orange',
       splash_pages: '/',
     },
   },
@@ -106,7 +105,7 @@ export default {
   loadingIndicator: {
     name: 'circle',
     color: 'white',
-    background: '#28a745',
+    background: 'orange',
   },
   loading: '~/components/LoadingBar.vue',
 }

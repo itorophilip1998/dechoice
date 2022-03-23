@@ -13,77 +13,77 @@
       </span>
     </div>
 
+   
+
     <div class="dashboard-header mt-5">
-      <!-- recommended -->
-      <h6 class="font-weight-bold pl-1">
-        Recommended Siwes Firm
-        <i class="fa fa-tag text-danger" aria-hidden="true"></i>
-      </h6>
-
-      <div class="recomended p-2 pb-5">
-        <div
-          class="card shadow mr-3 rounded-x"
-          v-for="item in firms"
-          :key="item"
-        >
-          <img class="card-img-top rounded-x" :src="item.url" alt="" />
-          <div class="card-body p-1 py-2">
-            <h6 class="card-title m-0">{{ item.name }}</h6>
-            <small class="card-text d-block"
-              ><i class="fa fa-map-marker text-success" aria-hidden="true"></i>
-              {{ item.location }}</small
-            >
-            <span class="card-text d-block">
-              ₦{{ item.price }}
-              <i
-                v-if="item.price"
-                class="fa fa-check-circle text-danger"
-                aria-hidden="true"
-              ></i>
-            </span>
-          </div>
-          <div
-            class="btn btn-sm btn-success p-1 shadow w-100"
-            @click="apply(item)"
-          >
-            Apply
-          </div>
-        </div>
-      </div>
-
       <!-- Applied -->
       <h6 class="font-weight-bold pl-1">
-        Applied Siwes Firm
+        Foods/Drinks
         <i class="fa fa-tag text-danger" aria-hidden="true"></i>
       </h6>
 
       <div class="recomended p-2 pb-5" id="load">
         <div
           class="card shadow mr-3 rounded-x"
-          v-for="(data, index) in appliedfirm"
+          v-for="(data, index) in foods"
           :key="index"
         >
           <img class="card-img-top rounded-x" :src="data.url" alt="" />
           <div class="card-body p-1 py-2">
             <h6 class="card-title m-0">{{ data.name }}</h6>
-            <small class="card-text d-block"
-              ><i class="fa fa-map-marker text-success" aria-hidden="true"></i>
-              {{ data.location }}</small
-            >
-            <span class="card-text d-block">
+
+            <h5 class="card-text d-block">
               ₦{{ data.price }}
               <i
                 v-if="data.price"
-                class="fa fa-check-circle text-danger"
+                class="fa fa-check-circle text-primary"
                 aria-hidden="true"
               ></i>
-            </span>
+            </h5>
+            <small class="card-text d-block"> {{ data.desscription }}</small>
           </div>
           <div
-            class="btn btn-sm btn-danger p-1 shadow w-100"
+            class="btn btn-sm btn-dark p-1 shadow w-100"
             @click="deleteItem(data)"
           >
-            Cancel
+            Add to Cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="dashboard-header ">
+      <!-- Applied -->
+      <h6 class="font-weight-bold pl-1">
+        Electronics/Clothe
+        <i class="fa fa-tag text-danger" aria-hidden="true"></i>
+      </h6>
+
+      <div class="recomended p-2 pb-5" id="load">
+        <div
+          class="card shadow mr-3 rounded-x"
+          v-for="(data, index) in electronics"
+          :key="index"
+        >
+          <img class="card-img-top rounded-x" :src="data.url" alt="" />
+          <div class="card-body p-1 py-2">
+            <h6 class="card-title m-0">{{ data.name }}</h6>
+
+            <h5 class="card-text d-block">
+              ₦{{ data.price }}
+              <i
+                v-if="data.price"
+                class="fa fa-check-circle text-primary"
+                aria-hidden="true"
+              ></i>
+            </h5>
+            <small class="card-text d-block"> {{ data.desscription }}</small>
+          </div>
+          <div
+            class="btn btn-sm btn-dark p-1 shadow w-100"
+            @click="deleteItem(data)"
+          >
+            Add to Cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
           </div>
         </div>
       </div>
@@ -94,9 +94,10 @@
 <script>
 import Header from '@/components/auth-header'
 import Loader from './Loader'
-
+import foods from './foods.json'
+import electronics from './electronics.json'
 export default {
-  middleware:  'auth',
+  middleware: 'auth',
   components: {
     Header,
     Loader,
@@ -114,16 +115,18 @@ export default {
       loader: false,
       appliedfirm: {},
       firms: {},
+      foods: foods,
+      electronics: electronics,
     }
   },
   created() {
-
-    const name = localStorage.getItem('name')
+    const wallet = localStorage.getItem('wallet')
     const email = localStorage.getItem('email')
     const dept = localStorage.getItem('dept')
     const sch = localStorage.getItem('sch')
-    this.info.short_name = `${name}`
-    this.info.details = `${email}, ${dept ? dept + ',' : ''} ${ sch ? sch + ',' : ''
+    this.info.short_name = `${wallet || '₦40,783.00'}`
+    this.info.details = `${email}, ${dept ? dept + ',' : ''} ${
+      sch ? sch + ',' : ''
     }`
   },
   mounted() {

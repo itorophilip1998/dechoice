@@ -1,21 +1,17 @@
 <template>
   <div>
-    <img src="~assets/images/hero.jpg" class="hero">
+    <img src="~assets/image/bg.jpg" class="hero">
     <div class="overlay"></div>
     <div class="my-container bg-transparent text-white pt-5 p-2 mt-5">
         <h1 >
-            Get A  Siwes Firm Without Stress!
+            De `choice SImply Tasty!
         </h1>
 
         <p class="my-4 text-light">
-      Don't bother about where to do your IT(Industral Training) just stay cool, apply and get a sorted.
+    WELCOME TO DECHOICE MALL. Dechoice Mall. All Categories, Uncategorized, All Products, Fast Food, Africana, Bakery, Cakes, Chicken & Fish, Continental.
         </p>
-        <nuxt-link to="/login" class="btn btn-success rounded-pill w-50 mt-3 shadow  text-white"> Get Started <i class="fa fa-long-arrow-right ml-2" aria-hidden="true"></i></nuxt-link>
-        <div class="contact text-center p-4">
-          <a href="https://www.facebook.com" class="fa fa-facebook  shadow text-white" aria-hidden="true"></a>
-          <a href="https://www.whatsapp.com" class="fa fa-whatsapp shadow text-white" aria-hidden="true"></a>
-          <a href="https://www.twitter.com" class="fa fa-twitter shadow text-white" aria-hidden="true"></a>
-        </div>
+        <nuxt-link to="/login" class="btn btn-success rounded-pill w-50 mt-3 shadow  text-white"> Order Now <i class="fa fa-long-arrow-right ml-2" aria-hidden="true"></i></nuxt-link>
+      
     </div>
   </div>
 </template>

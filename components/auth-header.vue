@@ -5,12 +5,17 @@
        <span  @click="$router.back()" class="navbar-brand ">
              <i class="fa fa-arrow-left text-white" aria-hidden="true"></i>
     </span>
-       <nuxt-link to="/document" class=" btn btn-outline-light shadow btn-sm  l-0" v-if="info.dashboard">Upload <i class="fa fa-user-o " aria-hidden="true"></i></nuxt-link>
+       <nuxt-link to="/document" class=" btn btn-outline-light shadow btn-sm  l-0" v-if="info.dashboard"> <i class="fa fa-cart-plus" aria-hidden="true"></i></nuxt-link>
 
 
-     <h5 class="text-white">{{info.short_name}}
+     <h5 class="text-white text-center">{{info.short_name}}
        </h5>
-     <p class="text-white">{{info.details}}</p>
+<div class="p-2 text-center" v-if="info.dashboard">
+     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="#" role="button">Pay via BTC</a>
+     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="#" role="button">Fund</a>
+
+</div>
+     <p class="text-white" v-if="!info.dashboard">{{info.details}}</p>
      <div class="name shadow w-75 p-2 text-center text-dark " v-if="!info.dashboard"> {{ info.name }}  <i :class="`fa  ml-2 ${info.icon}`"></i></div>
 
      </div>
@@ -46,5 +51,11 @@ props:["info"]
   border-radius: 10px;
   left:12.5%;
 
+}
+.smT{
+  font-size:12px;
+}
+.w-25{
+  width:30% !important
 }
 </style>
