@@ -4,7 +4,7 @@
     <div class="overlay"></div>
     <div class="my-container bg-transparent text-white pt-5 p-2 mt-5">
         <h1 >
-            De `choice SImply Tasty!
+            De `Choice Simply Tasty!
         </h1>
 
         <p class="my-4 text-light">
