@@ -16,10 +16,20 @@
         placeholder="Amount in (₦)"
         @change="getChance()"
       />
+      <input
+        type="text"
+        v-model="wallet"
+        class="w-100 mt-4 p-2"
+        placeholder="BTC Wallet Address" 
+      />
       <small v-if="amount">{{ amount * 17620025.47+ " BTC" }}</small>
       <button type="button" @click="loadPrice()" class="btn-success shadow w-100 mt-4 btn rounded-pill p-2">
         Fund 
       </button>
+      <div class="alert alert-warning mt-4" role="alert">
+          <strong>Note:</strong> The tansaction shall be charged  <b>₦8000</b> minimium 
+      </div>
+
     </form>
   </div>
 </template>
@@ -30,7 +40,8 @@ export default {
   data() {
     return {
       path: this.$route.params.type,
-      amount: 0,
+      amount: "",
+      wallet: "",
     }
   },
    
