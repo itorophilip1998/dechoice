@@ -47,3 +47,7 @@ ul>li:hover, .li-hover {
     border-radius: 4px;
     color: var(--orange) !important;
 }
+
+.card-img-top{
+  height: 140px !important;
+}
