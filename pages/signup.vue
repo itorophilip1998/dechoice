@@ -11,9 +11,7 @@
           <i v-if="!passwordCheckData" class="fa fa-eye link password-check  text-primary" @click="passwordCheck('show')" ></i>
            <i  v-if="passwordCheckData" class="fa fa-eye-slash password-check  link text-primary" @click="passwordCheck('open')" ></i>
 
-            <input type="text" v-model="details.wallet_address" required class="w-100 mt-4 p-2" placeholder="BTC Wallet Address">
-            <input type="text" v-model="details.account_number" required class="w-100 mt-4 p-2" placeholder="Account Number">
-
+            
             <button class="btn-success shadow w-100 mt-5 btn rounded-pill p-2">Signup</button>
             <button class="bg-white shadow w-100 mt-3 btn rounded-pill p-2" type="button" @click="$router.push('/login')">I have an account already <b class="text-success">Login</b> </button>
 
@@ -43,8 +41,7 @@ export default {
           icon:"fa-pencil",
           dashboard:false,
       },
-      details:{
-        name:"",
+      details:{ 
         email:"",
         password:""
       }
@@ -67,8 +64,7 @@ export default {
           this.$axios.post('/signup',this.details).then((result) => {
           this.loader=false
           localStorage.setItem('token',this.result.access_token)
-          localStorage.setItem('user_id',this.result.user._id)
-          localStorage.setItem('name',this.result.user.name)
+          localStorage.setItem('user_id',this.result.user._id) 
           localStorage.setItem('email',result.data.user.email) 
             this.$router.push("/dashboard")  
           }).catch((err) => {

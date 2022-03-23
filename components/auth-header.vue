@@ -6,12 +6,12 @@
              <i class="fa fa-arrow-left text-white" aria-hidden="true"></i>
     </span>
        <nuxt-link to="/document" class=" btn btn-outline-light shadow btn-sm  l-0" v-if="info.dashboard"> <i class="fa fa-cart-plus" aria-hidden="true"></i></nuxt-link>
- 
+
      <h5 class="text-white text-center">{{info.short_name}}
        </h5>
 <div class="p-2 text-center" v-if="info.dashboard">
-     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="#" role="button">Pay via BTC</a>
-     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="#" role="button">Fund</a>
+     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="/fund/btc" role="button">Fund via BTC</a>
+     <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="/fund/bank" role="button">Fund</a>
 
 </div>
      <p class="text-white" v-if="!info.dashboard">{{info.details}}</p>

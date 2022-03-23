@@ -1,5 +1,5 @@
 <template>
-  <div  class="bg-light pb-3">
+  <div  class=" pb-3">
   <Header v-if="$route.path=='/'" class="d-none"/>
    <Nuxt/>
    <Footer v-if="$route.path!='/'" />

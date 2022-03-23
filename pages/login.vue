@@ -65,10 +65,8 @@ export default {
           this.$axios.post('/signin',this.details).then((result) => {
           this.loader=false
           localStorage.setItem('token',result.data.access_token)
-          localStorage.setItem('user_id',result.data.user._id)
-          localStorage.setItem('name',result.data.user.name)
-          localStorage.setItem('email',result.data.user.email)
-          
+          localStorage.setItem('user_id',result.data.user._id) 
+          localStorage.setItem('email',result.data.user.email) 
             this.$router.push("/dashboard")
             if(res.data.message="user Already exist") this.$router.push("/dashboard")
           }).catch((err) => {
