@@ -95,7 +95,7 @@ export default {
       useWebmanifestExtension: false,
       description: 'De`Choice',
       background_color: 'white',
-      theme_color: 'orange',
+      theme_color: '#fd7e14',
       splash_pages: '/',
     },
   },
@@ -105,7 +105,7 @@ export default {
   loadingIndicator: {
     name: 'circle',
     color: 'white',
-    background: 'orange',
+    background: '#fd7e14',
   },
   loading: '~/components/LoadingBar.vue',
 }
