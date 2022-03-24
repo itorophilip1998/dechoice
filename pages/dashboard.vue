@@ -112,6 +112,7 @@ export default {
         icon: 'fa-pencil',
         dashboard: true,
       },
+amount:"",
       loader: false,
       appliedfirm: {},
       firms: {},
@@ -131,7 +132,7 @@ export default {
   },
   mounted() {
     this.getAll()
-  },
+    },
   methods: {
     formatCurrency(price){
     let dollarUSLocale = Intl.NumberFormat('en-US');
