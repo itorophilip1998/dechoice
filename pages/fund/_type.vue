@@ -78,10 +78,10 @@ export default {
       wallet: "",
     }
   },
-   
+        
   methods: {
        loadPrice(){
-            
+            console.log("hello")
        }
   }
   }
