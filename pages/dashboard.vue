@@ -193,8 +193,10 @@ export default {
     },
     addItem(data) {
       const itemCount = localStorage.getItem('count_item')
-      localStorage.setItem('count_item', int(itemCount) + 1)
-      const items = localStorage.getItem(`item_${itemCount}`)
+      itemCount ? itemCount + 1 : 1
+      console.log(itemCount ? itemCount + 1 : 1)
+      localStorage.setItem('count_item', itemCount ? itemCount + 1 : 1)
+      const items = localStorage.setItem(`item_${itemCount}`)
     },
     passwordCheck(data) {
       if (data == 'show') {
