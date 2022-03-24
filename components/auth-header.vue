@@ -14,7 +14,7 @@
      <a name="" id="" class="btn mx-2 btn-transparent btn-outline-light btn-sm w-25 smT shadow" href="/fund/bank" role="button">Fund</a>
 
 </div>
-     <p class="text-white" v-if="!info.dashboard">{{info.details}}</p>
+     <p class="text-white text-center" v-if="!info.dashboard">{{info.details}}</p>
      <div class="name shadow w-75 p-2 text-center text-dark " v-if="!info.dashboard"> {{ info.name }}  <i :class="`fa  ml-2 ${info.icon}`"></i></div>
 
      </div>
