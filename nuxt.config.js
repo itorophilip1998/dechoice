@@ -3,7 +3,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-headadd .
   router: {
-    middleware: 'auth',
+    
     scrollBehavior: async function (to, from, savedPosition) {
       if (savedPosition) {
         return savedPosition
