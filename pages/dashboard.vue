@@ -13,8 +13,6 @@
       </span>
     </div>
 
-   
-
     <div class="dashboard-header mt-5">
       <!-- Applied -->
       <h6 class="font-weight-bold pl-1">
@@ -43,8 +41,8 @@
             <small class="card-text d-block"> {{ data.desscription }}</small>
           </div>
           <div
-            class="btn btn-sm btn-dark p-1 shadow w-100"
-            @click="deleteItem(data)"
+            class="btn btn-sm btn-outline-warning p-1 shadow w-100"
+            @click="addItem(data)"
           >
             Add to Cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
           </div>
@@ -52,7 +50,7 @@
       </div>
     </div>
 
-     <div class="dashboard-header ">
+    <div class="dashboard-header">
       <!-- Applied -->
       <h6 class="font-weight-bold pl-1">
         Electronics/Clothes
@@ -80,8 +78,8 @@
             <small class="card-text d-block"> {{ data.desscription }}</small>
           </div>
           <div
-            class="btn btn-sm btn-dark p-1 shadow w-100"
-            @click="deleteItem(data)"
+            class="btn btn-sm btn-outline-warning p-1 shadow w-100"
+            @click="addItem(data)"
           >
             Add to Cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
           </div>
@@ -133,10 +131,10 @@ export default {
     this.getAll()
   },
   methods: {
-    formatCurrency(price){
-    let dollarUSLocale = Intl.NumberFormat('en-US');
-  let newCash=dollarUSLocale.format(price)
-        return newCash;
+    formatCurrency(price) {
+      let dollarUSLocale = Intl.NumberFormat('en-US')
+      let newCash = dollarUSLocale.format(price)
+      return newCash
     },
     getAll() {
       const token = localStorage.getItem('token')
@@ -193,26 +191,10 @@ export default {
         })
       this.getAll()
     },
-    deleteItem(data) {
-      const token = localStorage.getItem('token')
-      const user_id = localStorage.getItem('user_id')
-
-      this.loader = true
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-      this.$axios
-        .delete(`/appliedfirm/${user_id}/${data.siwes_firm_id}`, config)
-        .then((result) => {
-          this.loader = false
-          this.appliedfirm = result.data.result
-        })
-        .catch((err) => {
-          this.loader = false
-        })
-      this.getAll()
+    addItem(data) {
+      const itemCount = localStorage.getItem('count_item')
+      localStorage.setItem('count_item', int(itemCount) + 1)
+      const items = localStorage.getItem(`item_${itemCount}`)
     },
     passwordCheck(data) {
       if (data == 'show') {
@@ -242,5 +224,17 @@ export default {
 .card {
   display: inline-block;
   min-width: 50% !important;
+}
+
+.btn-outline-warning {
+  color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  background: white !important;
+}
+.btn-outline-warning:hover,
+.btn-outline-warning:focus {
+  color: var(--white) !important;
+  border-color: var(--orange) !important;
+  background: var(--orange) !important;
 }
 </style>
