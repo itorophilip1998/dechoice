@@ -23,6 +23,16 @@
 <script>
 export default {
 props:["info"]
+data(){
+return {
+wallet:""
+}
+},
+  created(){
+
+this.wallet=localStorage.setItem('wallet')
+         
+         }
 
 }
 </script>
