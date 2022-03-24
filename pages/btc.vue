@@ -11,7 +11,7 @@
         You are funding Via <b class="text-uppercase">{{ path }}</b>
       </h5>
       <input
-        type="text"
+        type="number"
         v-model="amount"
         class="w-100 mt-4 p-2"
         placeholder="Amount in (₦)"
@@ -84,7 +84,7 @@ export default {
        loadPrice(){
 try {
 const wallet=localStorage.getItem('wallet')
-         localStorage.setItem('wallet',(wallet)? wallet : 0 +this.amount)
+         localStorage.setItem('wallet',if(wallet)? wallet +this.amount : this.amount)
           this.$router.push('/dashboard')
             console.log("hello")
 
