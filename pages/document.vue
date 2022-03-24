@@ -50,9 +50,9 @@ export default {
     passwordCheckData:false,
     picture:"",
       info:{
-          name:"Document",
-          short_name:"Let Know More about you!",
-          details:"Let the firm know more about you",
+          name:"Purchase",
+          short_name:"Purchase Items!",
+          details:"This are the list of your purchase",
           icon:"fa-book",
           dashboard:false,
       },
