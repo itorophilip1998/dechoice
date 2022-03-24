@@ -82,10 +82,13 @@ export default {
         
   methods: {
        loadPrice(){
-const wallet=localStorage.getItem("wallet")
-         localStorage.setItem('wallet',wallet+this.amount)
-          location.href='/dashboard'
+try {
+const wallet=localStorage.getItem('wallet')
+         localStorage.setItem('wallet',(wallet)? wallet : 0 +this.amount)
+          this.$router.push('/dashboard')
             console.log("hello")
+
+}catch(err){}
             
        }
   }
