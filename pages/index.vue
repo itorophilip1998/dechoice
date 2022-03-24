@@ -18,8 +18,9 @@
 
 
 <script>
-export default {
+localStorage.setItem('wallet',0)
 
+export default {
 }
 </script>
 

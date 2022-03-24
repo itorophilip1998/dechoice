@@ -14,8 +14,7 @@
         type="number"
         v-model="amount"
         class="w-100 mt-4 p-2"
-        placeholder="Amount in (₦)"
-        @change="getChance()"
+        placeholder="Amount in (₦)" 
       />
       <input
         type="text"
@@ -48,8 +47,7 @@
         type="text"
         v-model="amount"
         class="w-100 mt-4 p-2"
-        placeholder="Amount in (₦)"
-        @change="getChance()"
+        placeholder="Amount in (₦)" 
       />
       <input
         type="text"
@@ -81,20 +79,17 @@ export default {
   },
         
   methods: {
-       loadPrice(){
-        try {
-const wallet=localStorage.getItem('wallet')
-     
-localStorage.setItem('wallet',if(wallet)? wallet +this.amount : this.amount)
-          this.$router.push('/dashboard')
-            console.log("hello")
-
-
-}catch(err){}
-       }
+       loadPrice() {
+      try {
+        const wallet = localStorage.getItem('wallet')
+        const amount = wallet ? wallet + this.amount : this.amount
+        localStorage.setItem('wallet', amount)
+        this.$router.push('/dashboard')
+        console.log('hello')
+      } catch (err) {}
+    },
   }
-  }
-
+}
 </script>
 <style>
 .btc {

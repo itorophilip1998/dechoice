@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <form class="mt-5 pt-5 p-3 bg-white text-center" v-if="path == 'btc'">
@@ -14,32 +13,33 @@
         type="number"
         v-model="amount"
         class="w-100 mt-4 p-2"
-        placeholder="Amount in (₦)"
-        @change="getChance()"
+        placeholder="Amount in (₦)" 
       />
       <input
         type="text"
         v-model="wallet"
         class="w-100 mt-4 p-2"
-        placeholder="BTC Wallet Address" 
+        placeholder="BTC Wallet Address"
       />
-      <small v-if="amount">{{ amount *0.00000001  + " BTC" }}</small>
-      <button type="button" @click="loadPrice()" class="btn-success shadow w-100 mt-4 btn rounded-pill p-2">
-        Fund 
+      <small v-if="amount">{{ amount * 0.00000001 + ' BTC' }}</small>
+      <button
+        type="button"
+        @click="loadPrice()"
+        class="btn-success shadow w-100 mt-4 btn rounded-pill p-2"
+      >
+        Fund
       </button>
       <div class="alert alert-warning mt-4" role="alert">
-          <strong>Note:</strong> The tansaction shall be charged  <b>₦8000</b> minimium 
+        <strong>Note:</strong> The tansaction shall be charged
+        <b>₦8000</b> minimium
       </div>
-
     </form>
 
-
-
-      <form class="mt-5 pt-5 p-3 bg-white text-center" v-if="path == 'bank'">
+    <form class="mt-5 pt-5 p-3 bg-white text-center" v-if="path == 'bank'">
       <img
         class="bank mb-3"
-      src="data:image/png;base64,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"
-       />
+        src="data:image/png;base64,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"
+      />
 
       <h5>
         You are funding Via <b class="text-uppercase">{{ path }}</b>
@@ -49,22 +49,24 @@
         v-model="amount"
         class="w-100 mt-4 p-2"
         placeholder="Amount in (₦)"
-        @change="getChance()"
       />
       <input
         type="text"
         v-model="wallet"
         class="w-100 mt-4 p-2"
-        placeholder="Account Number" 
-      /> 
-      <button type="button" @click="loadPrice()" class="btn-success shadow w-100 mt-4 btn rounded-pill p-2">
-        Fund 
+        placeholder="Account Number"
+      />
+      <button
+        type="button"
+        @click="loadPrice()"
+        class="btn-success shadow w-100 mt-4 btn rounded-pill p-2"
+      >
+        Fund
       </button>
       <div class="alert alert-warning mt-4" role="alert">
-          <strong>Note:</strong> The tansaction shall be charged  <b>₦100</b> minimium 
-
+        <strong>Note:</strong> The tansaction shall be charged
+        <b>₦100</b> minimium
       </div>
-
     </form>
   </div>
 </template>
@@ -74,32 +76,30 @@
 export default {
   data() {
     return {
-      path: "btc",
-      amount: "",
-      wallet: "",
+      path: 'btc',
+      amount: '',
+      wallet: '',
     }
   },
-        
+
   methods: {
-       loadPrice(){
-try {
-const wallet=localStorage.getItem('wallet')
-         localStorage.setItem('wallet',if(wallet)? wallet +this.amount : this.amount)
-          this.$router.push('/dashboard')
-            console.log("hello")
-
-}catch(err){}
-            
-       }
-  }
-  }
-
+    loadPrice() {
+      try {
+        const wallet = localStorage.getItem('wallet')
+        const amount = wallet ? wallet + this.amount : this.amount
+        localStorage.setItem('wallet', amount)
+        this.$router.push('/dashboard')
+        console.log('hello')
+      } catch (err) {}
+    },
+  },
+}
 </script>
 <style>
 .btc {
   width: 70px;
 }
-.bank{
-    width:150px
+.bank {
+  width: 150px;
 }
 </style>

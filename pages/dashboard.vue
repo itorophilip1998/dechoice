@@ -110,7 +110,7 @@ export default {
         icon: 'fa-pencil',
         dashboard: true,
       },
-amount:"",
+      amount: '',
       loader: false,
       appliedfirm: {},
       firms: {},
@@ -123,14 +123,14 @@ amount:"",
     const email = localStorage.getItem('email')
     const dept = localStorage.getItem('dept')
     const sch = localStorage.getItem('sch')
-    this.info.short_name = `₦${wallet || 0}.00`
+    this.info.short_name = `₦${this.formatCurrency(wallet) || 0}.00`
     this.info.details = `${email}, ${dept ? dept + ',' : ''} ${
       sch ? sch + ',' : ''
     }`
   },
   mounted() {
     this.getAll()
-    },
+  },
   methods: {
     formatCurrency(price) {
       let dollarUSLocale = Intl.NumberFormat('en-US')
@@ -192,12 +192,10 @@ amount:"",
         })
       this.getAll()
     },
-    addItem(data) {
-      const itemCount = localStorage.getItem('count_item')
-      itemCount ? itemCount + 1 : 1
-      console.log(itemCount ? itemCount + 1 : 1)
-      localStorage.setItem('count_item', itemCount ? itemCount + 1 : 1)
-      const items = localStorage.setItem(`item_${itemCount}`)
+    addItem(data) {   
+      const items = localStorage.setItem(`${data.name}`, `${data.price}`) 
+      location.reload()
+    
     },
     passwordCheck(data) {
       if (data == 'show') {

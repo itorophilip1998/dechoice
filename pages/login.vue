@@ -46,7 +46,7 @@ export default {
     }
   },
   created(){
-        localStorage.clear()
+        // localStorage.clear()
   },
   methods: {
    passwordCheck(data){
