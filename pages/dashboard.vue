@@ -110,6 +110,7 @@ export default {
         icon: 'fa-pencil',
         dashboard: true,
       },
+amount:"",
       loader: false,
       appliedfirm: {},
       firms: {},
@@ -122,14 +123,14 @@ export default {
     const email = localStorage.getItem('email')
     const dept = localStorage.getItem('dept')
     const sch = localStorage.getItem('sch')
-    this.info.short_name = `${wallet || '₦40,783.00'}`
+    this.info.short_name = `₦${wallet || 0}.00`
     this.info.details = `${email}, ${dept ? dept + ',' : ''} ${
       sch ? sch + ',' : ''
     }`
   },
   mounted() {
     this.getAll()
-  },
+    },
   methods: {
     formatCurrency(price) {
       let dollarUSLocale = Intl.NumberFormat('en-US')

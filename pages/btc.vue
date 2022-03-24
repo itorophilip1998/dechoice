@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <form class="mt-5 pt-5 p-3 bg-white text-center" v-if="path == 'btc'">
@@ -10,7 +11,7 @@
         You are funding Via <b class="text-uppercase">{{ path }}</b>
       </h5>
       <input
-        type="text"
+        type="number"
         v-model="amount"
         class="w-100 mt-4 p-2"
         placeholder="Amount in (₦)"
@@ -22,7 +23,7 @@
         class="w-100 mt-4 p-2"
         placeholder="BTC Wallet Address" 
       />
-      <small v-if="amount">{{ amount * 17620025.47+ " BTC" }}</small>
+      <small v-if="amount">{{ amount *0.00000001  + " BTC" }}</small>
       <button type="button" @click="loadPrice()" class="btn-success shadow w-100 mt-4 btn rounded-pill p-2">
         Fund 
       </button>
@@ -73,7 +74,7 @@
 export default {
   data() {
     return {
-      path: this.$route.params.type,
+      path: "btc",
       amount: "",
       wallet: "",
     }
@@ -81,7 +82,14 @@ export default {
         
   methods: {
        loadPrice(){
+try {
+const wallet=localStorage.getItem('wallet')
+         localStorage.setItem('wallet',if(wallet)? wallet +this.amount : this.amount)
+          this.$router.push('/dashboard')
             console.log("hello")
+
+}catch(err){}
+            
        }
   }
   }

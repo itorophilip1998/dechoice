@@ -9,23 +9,9 @@
               
                 <small>  Ops, can't right now,error</small>
               </div>
-    <!-- <div class="add text-muted  w-100 text-center"><span class=" bg-light ">Additional information</span></div> -->
-
-            <input type="text" v-model="details.department" required class="w-100 mt-3" placeholder="Department">
-
-            <input type="text" v-model="details.school" required class="w-100 mt-4" placeholder="School">
-
-               <select name="" id="" v-model="details.firm_type" required class="w-100 mt-4" >
-                 <option value="" >Select Type of  Firm </option>
-                 <option  selected v-for="firm in firms" :key="firm">{{ firm }}</option>
-               </select>
-               <select name="" id="" v-model="details.duration" required class="w-100 mt-4" >
-                 <option value="" selected>Select Location</option>
-                 <option >1-year IT</option>
-                 <option >4-month Siwes</option>
-               </select>
-
-            <button class="btn-success shadow w-100 mt-5 btn rounded-pill p-2" >Upload Document</button>
+     
+            Loading list of items
+            <button class="btn-success shadow w-100 mt-5 btn rounded-pill p-2" >Pay Now</button>
 
      </form>
       </div>
@@ -64,9 +50,9 @@ export default {
     passwordCheckData:false,
     picture:"",
       info:{
-          name:"Document",
-          short_name:"Let Know More about you!",
-          details:"Let the firm know more about you",
+          name:"Purchase",
+          short_name:"Purchase Items!",
+          details:"This are the list of your purchase",
           icon:"fa-book",
           dashboard:false,
       },

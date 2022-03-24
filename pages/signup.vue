@@ -37,7 +37,7 @@ export default {
       info:{
           name:"Register",
           short_name:"Create new account!",
-          details:"Signup to  access your siwes placement.",
+          details:"Signup to  access your order",
           icon:"fa-pencil",
           dashboard:false,
       },
