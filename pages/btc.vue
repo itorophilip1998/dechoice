@@ -23,7 +23,7 @@
         class="w-100 mt-4 p-2"
         placeholder="BTC Wallet Address" 
       />
-      <small v-if="amount">{{ amount * 17620025.47+ " BTC" }}</small>
+      <small v-if="amount">{{ amount *0.00000001  + " BTC" }}</small>
       <button type="button" @click="loadPrice()" class="btn-success shadow w-100 mt-4 btn rounded-pill p-2">
         Fund 
       </button>
