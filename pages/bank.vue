@@ -84,7 +84,7 @@ export default {
        loadPrice(){
         try {
 const wallet=localStorage.getItem('wallet')
-         localStorage.setItem('wallet',wallet+this.amount)
+         localStorage.setItem('wallet',(wallet)? wallet : 0 +this.amount)
           this.$router.push('/dashboard')
             console.log("hello")
 
