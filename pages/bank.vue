@@ -82,7 +82,7 @@ export default {
         
   methods: {
        loadPrice(){
-        const wallet=localStorage.setItem('wallet')
+        const wallet=localStorage.getItem('wallet')
          localStorage.setItem('wallet',wallet+this.amount)
           location.href='/dashboard'
             console.log("hello")
